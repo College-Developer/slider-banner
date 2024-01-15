@@ -6,18 +6,20 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     min-height: 100vh;
-    max-width: 1100%;
-}
+    max-width: 100%;
+} */
 
 .slider {
     /* border:  5px solid black; */
     /* max-width: 100vh; */
     /* min-height: 100vh; */
     /* overflow: hidden; */
-    max-width: 100%;
-    overflow-y: hidden;
+    /* max-width: 100%; */
+    width: 100%;
+    max-height: 100vh;
+    /* overflow-y: hidden; */
     position: relative;
 }
 
@@ -28,6 +30,7 @@ body {
     max-height: 100vh;
     display: none;
     overflow: hidden;
+    
 }
 
 .mySlider::after {
@@ -39,18 +42,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.5);
     /* animation: movePic 2s ease-in-out 1s infinite alternate; */
-    
 }
 
 .mySlider img {
     /* z-index: -1; */
     max-width: 100%;
     height: 100%;
-    animation: movePic 2s ease-in-out 3s infinite alternate;
+    transform: scale(1.2, 1.2);
+    animation: movePic 20s ease-in-out 3s infinite alternate;
     /* transition: all 5s ease-in; */
-    
 }
 
 .mySlider.active {
@@ -77,44 +79,48 @@ body {
 
 .mySlider .content .text-1 {
     /* border: 1px solid tomato; */
-    animation: fade 1.5s ease-in;
+    animation: textMove 1.5s ease-in;
 }
 .mySlider .content .text-2 {
     /* border: 1px solid tomato; */
-    animation: fade 2.5s ease-in 5ms;
+    animation: textMove 2.5s ease-in 5ms;
 }
 .mySlider .content .text-3 {
     /* border: 1px solid tomato; */
-    animation: fade 3.5s ease-in 50ms;
+    animation: textMove 3.5s ease-in 50ms;
 }
 
-.sliderBtn {
+.sliderBtn-left,
+.sliderBtn-right {
     /* border:  2px solid salmon; */
     position: absolute;
     top: 50%;
-    font-size: 3rem;
+    font-size: 4rem;
     transform: translate(0, -50%);
-    color: #ffffffad;
+    color: #fff;
+    cursor: pointer;
+    /* padding: 0 0.5em 0; */
+}
+
+.sliderBtn-right {
+    right: 0;
+}
+
+.sliderBtn-left:hover,
+.sliderBtn-right:hover {
+    color: #b1ec60;
+    transition: color 0.1s ease-in-out;
+
+}
+
+.clip-effect {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0.5em 0;
+    height: 100%;
+    background: #b9ef6e;
+    animation: clipEffect 1.3s ease-in-out;
 }
 
-.sliderBtn span {
-    padding: 0.1em 0.3em;
-    border-radius: 50%;
-    opacity: 0;
-}
-
-.sliderBtn span:hover {
-    background: #000;
-    opacity: 1;
-    transition: background 1s ease-in-out;
-
-}
-
-@keyframes fade {
+@keyframes textMove {
     from {
         transform: translateX(-150%);
     }
@@ -125,13 +131,18 @@ body {
 
 @keyframes movePic {
     from {
-        transform: scale(1,1)
+        transform: scale(1.2, 1.2)
     }
     to {
-        transform: scale(1.02,1.02)
+        transform: scale(1,1)
     }
 }
 
-
-
-
+@keyframes clipEffect {
+    from {
+        clip-path: stroke-box circle(0% at 25% 25%);
+    }    
+    to {
+        clip-path: circle(100% at 25% 25%)
+    }
+}
