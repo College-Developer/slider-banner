@@ -120,6 +120,102 @@
     animation: clipEffect 1.3s ease-in-out;
 }
 
+/* ___________card_______________ */
+
+.wrapper {
+    margin:  10rem auto;
+    max-width: 1100px;
+    width: 100%;
+    /* background: linear-gradient(120deg, rgb(123, 186, 119) 0%, rgba(124,226,96,1) 35%, rgba(202,247,140,1) 100%); */
+    position: relative;
+}
+
+.wrapper span.nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 1.25rem;
+    position: absolute;
+    top: 50%;
+    line-height: 50px;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    text-align: center;
+    cursor: pointer;
+}
+
+.wrapper span:first-child {
+    left: -22px;
+}
+
+.wrapper span:last-child {
+    right: -22px;
+}
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow: hidden;
+    /* padding: 20px; */
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.dragging {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 342px;
+    /* border:  2px solid green; */
+    border-radius: 10px;
+    list-style: none;
+    cursor: pointer;
+    /* border: 3px inset white; */
+    /* box-shadow: 5px 5px 10px rgb(212, 212, 212); */
+}
+
+.card h2 {
+    font-size: 1.56rem;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+.card span {
+    font-size: 1.05rem;
+    padding: 0 8px;
+    text-align:  justify;
+    line-height: 24px;
+}
+
+.card .img img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
 @keyframes textMove {
     from {
         transform: translateX(-150%);
@@ -140,9 +236,21 @@
 
 @keyframes clipEffect {
     from {
-        clip-path: stroke-box circle(0% at 25% 25%);
+        clip-path: stroke-box circle(25% at 0% 25%);
     }    
     to {
         clip-path: circle(100% at 25% 25%)
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%
     }
 }
