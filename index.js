@@ -18,6 +18,7 @@ function incrementSlide(){
         slide.classList.remove("active");
     })
     mySliders[counter].classList.add("active");
+    mySliders[counter].classList.add("clip-effect");
     resetTimer();
 }
 
@@ -38,5 +39,48 @@ function resetTimer(){
     // console.log(timerId);
 }
 
+let timerId = setInterval(incrementSlide, 15000);
 
-let timerId = setInterval(incrementSlide, 15000)
+// $$$$$$$$$$$$$$$$$$$$$$$$$$$$ card Slider ######################
+
+const carousel = document.querySelector(".carousel");
+const arrowBtns = document.querySelectorAll(".nav-btn");
+const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+console.log(arrowBtns);
+console.log(firstCardWidth);
+let isDragging = false, startX, startScrollLeft;
+
+
+
+function dragStart(e) {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    // Records the initial cursor and scroll position of the carousel
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+}
+
+const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+}
+
+function dragging(e) {
+    if(!isDragging) return;
+    // Updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+arrowBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        scrollValue = btn.id === "left" ? -firstCardWidth : firstCardWidth;
+        console.log(scrollValue);
+        console.log(carousel.scrollLeft);
+        carousel.scrollLeft += scrollValue;
+        console.log(carousel.scrollLeft);
+    })
+})
+
+carousel.addEventListener("mousedown", dragStart);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("mousemove", dragging);
