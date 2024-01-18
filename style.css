@@ -128,6 +128,7 @@
     width: 100%;
     /* background: linear-gradient(120deg, rgb(123, 186, 119) 0%, rgba(124,226,96,1) 35%, rgba(202,247,140,1) 100%); */
     position: relative;
+    padding: 0 22px;
 }
 
 .wrapper span.nav-btn {
@@ -146,11 +147,11 @@
 }
 
 .wrapper span:first-child {
-    left: -22px;
+    left: -0px;
 }
 
 .wrapper span:last-child {
-    right: -22px;
+    right: -0px;
 }
 .wrapper .carousel {
     display: grid;
@@ -164,6 +165,10 @@
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+  }
 
 .carousel::-webkit-scrollbar {
     display: none;
