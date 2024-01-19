@@ -6,10 +6,11 @@
     box-sizing: border-box;
 }
 
-/* body {
-    min-height: 100vh;
-    max-width: 100%;
-} */
+body {
+    /* min-height: 100vh;
+    max-width: 100%; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
 
 .slider {
     /* border:  5px solid black; */
@@ -42,7 +43,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(18, 18, 18, 0.4);
     /* animation: movePic 2s ease-in-out 1s infinite alternate; */
 }
 
@@ -69,24 +70,48 @@
     left: 10%;
     /* transform: translateX(-150%); */
     /* transform: translate(0, -50%); */
-    font-size: 20px;
+    /* font-size: 20px; */
     color: white;
     width: 35%;
     z-index: 99;
     /* animation: fade 3s ease-in; */
     /* opacity: 0; */
+    /* background   */
+    /* line-height: 3.5rem; */
+    /* box-shadow: 0 0px 10px #ffffff17; */
+    letter-spacing: 1px;
 }
 
 .mySlider .content .text-1 {
     /* border: 1px solid tomato; */
+    font-size: 2.5rem;
+    line-height: 1.4em;
     animation: textMove 1.5s ease-in;
+    padding-bottom: 0.25em;
+    text-shadow: 0px 10px 5px rgba(0, 0, 0, 0.3);
+   
 }
+
+.mySlider .content .text-1 span.highlight-text {
+    color: #f4ab01;
+}
+
 .mySlider .content .text-2 {
     /* border: 1px solid tomato; */
     animation: textMove 2.5s ease-in 5ms;
+    font-size: 2rem;
+    padding-bottom: 0.3em;
+    background: linear-gradient(to right, #f32170,
+					#ff6b08, #cf23cf, #eedd44);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+    font-weight: 500;
+    /* line-height: 1.4em; */
 }
 .mySlider .content .text-3 {
     /* border: 1px solid tomato; */
+    font-size: 1rem;
+    line-height: 1.5em;
     animation: textMove 3.5s ease-in 50ms;
 }
 
@@ -114,19 +139,27 @@
 }
 
 .clip-effect {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     background: #b9ef6e;
     animation: clipEffect 1.3s ease-in-out;
 }
 
 /* ___________card_______________ */
 
+.contain {
+    /* border:  2px solid purple; */
+    padding: 5rem 0;
+    background: linear-gradient(120deg, rgb(123, 186, 119) 0%, rgba(124,226,96,1) 35%, rgba(202,247,140,1) 100%);
+    /* background: -webkit-linear-gradient(#eee, #333); */
+}
+
 .wrapper {
-    margin:  10rem auto;
+    /* border: 5px solid tomato; */
+    margin:  0rem auto;
     max-width: 1100px;
     width: 100%;
-    /* background: linear-gradient(120deg, rgb(123, 186, 119) 0%, rgba(124,226,96,1) 35%, rgba(202,247,140,1) 100%); */
+    
     position: relative;
     padding: 0 22px;
 }
