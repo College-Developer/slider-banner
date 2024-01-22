@@ -1,3 +1,16 @@
+const hamburger = document.querySelector("button.menu-lines");
+console.log(hamburger);
+const navbarMenuMob = document.querySelector(".navbar-menu-mobile");
+console.log(navbarMenuMob);
+hamburger.addEventListener("click", function() {
+    hamburger.classList.toggle("is-active");
+    // navbarMenuMob.style.right = 0;
+})
+
+
+
+
+ 
 const mySliders = document.querySelectorAll(".mySlider");
 const leftBtn = document.querySelector(".sliderBtn-left");
 const rightBtn = document.querySelector(".sliderBtn-right");
