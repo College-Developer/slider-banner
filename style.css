@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Ubuntu:wght@400;500&display=swap');
 *,
 *::after,
 *::before {
@@ -415,6 +416,7 @@ li.sidebar-menu:hover .sidebar {
 .contain {
     /* border:  2px solid purple; */
     padding: 5rem 0;
+    
     /* background: linear-gradient(120deg, rgb(123, 186, 119) 0%, rgba(124,226,96,1) 35%, rgba(202,247,140,1) 100%); */
     /* background: -webkit-linear-gradient(#eee, #333); */
 }
@@ -424,7 +426,6 @@ li.sidebar-menu:hover .sidebar {
     margin:  0rem auto;
     max-width: 1100px;
     width: 100%;
-    
     position: relative;
     padding: 0 22px;
 }
@@ -484,32 +485,45 @@ li.sidebar-menu:hover .sidebar {
 
 .carousel .card {
     scroll-snap-align: start;
-    background-color: #fff;
+    /* background-color: #fff; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 342px;
+    height: 430px;
     /* border:  2px solid green; */
-    border-radius: 10px;
+    border-radius: 8px;
     list-style: none;
     cursor: pointer;
-    /* border: 3px inset white; */
-    /* box-shadow: 5px 5px 10px rgb(212, 212, 212); */
+    background-image: linear-gradient(180deg,#bfff39,#a8ff35 70%);
 }
 
 .card h2 {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.56rem;
-    font-weight: bold;
     margin: 0.5em 0;
     text-align: center;
+    /* text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25); */
 }
 
 .card span {
-    font-size: 1.05rem;
-    padding: 0 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #000;
     text-align:  justify;
     line-height: 24px;
+    padding: 0 13px 0px;
+    /* color: #fff; */
+}
+
+.card .img {
+    /* border: 2px solid white; */
+    width: 100%;
+    text-align: center;
+    background-color: rgba(166, 166, 166, 0.4);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.23);
+    border-radius: 8px 8px 30px 0;
+    padding: 6px 0;
 }
 
 .card .img img {
@@ -517,12 +531,8 @@ li.sidebar-menu:hover .sidebar {
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid rgba(11, 11, 11, 0.931);
-}
-
-.card .img img:hover {
-    border-color: #b1ec60;
-    transition: border-color 0.2s ease-in;
+    border: 1.75px solid black;
+    clip-path: circle(50% at 50% 50%);
 }
 
 @keyframes textMove {
